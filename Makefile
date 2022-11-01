@@ -9,24 +9,30 @@ EXE="C:\src\fantastisk\Binaries\Win64\Fantastisk.exe"
 build-editor: 
 	$(UE_BYGG) FantastiskEditor Win64 Development $(U_PROJECT) -waitmutex -NoHotReload
 
+# Starter editoren, krever .dll
 editor:
 	$(UE_EDITOR) $(U_PROJECT) -log
 
+# Kjører spillet i editoren (krever ikke cooking)
 run-game:
 	$(UE_EDITOR) $(U_PROJECT) -game -log -windowed -resx=1280 -resy=720
 
+# Bygger executable
 build-standalone-executable:
 	$(UE_BYGG) Fantastisk Win64 Development $(U_PROJECT) -waitmutex -NoHotReload
 
+# et kortere alias tilbake til build-standalone-executable
 build-exe: build-standalone-executable
 
+# kompilerer assets som executable trenger
 cook:
 	$(UE_EDITOR_CMD) $(U_PROJECT) -run=cook -targetplatform=Windows
 
-
+# kjører ferdig .exe
 run-exe:
 	$(EXE) -log -windowed -resx=1280 -resy=720
 
+# rydder opp.
 clean: 
 	-rd /s /q .vscode
 	-rd /s /q Binaries
