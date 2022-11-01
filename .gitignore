@@ -1,0 +1,9 @@
+.vscode
+*.code-workspace
+Intermediate/
+Binaries/
+Saved/
+DerivedDataCache/
+
+**/*.log
+**/AutoScreenshot.png
