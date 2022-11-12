@@ -7,3 +7,10 @@ DerivedDataCache/
 
 **/*.log
 **/AutoScreenshot.png
+
+.git
+.vscode
+DerivedDataCache
+Intermediate
+Saved
+Script
